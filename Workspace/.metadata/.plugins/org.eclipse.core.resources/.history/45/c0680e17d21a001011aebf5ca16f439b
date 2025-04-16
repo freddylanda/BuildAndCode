@@ -1,0 +1,13 @@
+package com.mx.Empleado;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		// Instancia de los objetos
+		
+		Empleado e1 = new Empleado(232, "Raul", "Gutierrez", "Auxiliar adminitrativo", "Contabilidad", 541616735, 2300.89);
+		Empleado e3 = new Empleado(343, "Emma", "Smith", "Administrador", "Finanzas", 98900000, 5000.00);
+		Empleado e4 = new Empleado(343, "Isabella", "James", "Tester", "Sistemas", 78600000, 6000.00);
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.mx.Celular;
+
+public class Peliculas {
+	
+	private String titulo;
+	private int anio;
+	private String director;
+	private double costo;
+
+	//constructor
+	public Peliculas() {
+		
+	}
+
+}

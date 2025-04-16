@@ -1,0 +1,9 @@
+package com.mx.Alumno;
+
+public interface IGestionCalificaciones {
+	
+	public void agregarCalificacion(String materia, double calificacion);
+	public void eliminarCalificacion(String materia);
+	public void mostrarCalificaciones();
+
+}

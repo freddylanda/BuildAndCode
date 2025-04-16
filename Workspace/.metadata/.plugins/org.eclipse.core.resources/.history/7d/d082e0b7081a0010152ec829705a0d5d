@@ -1,0 +1,45 @@
+package com.mx.Celular;
+
+import java.util.ArrayList;
+import java.util.List;
+
+//Esta clase es la implementación de mi Interface y ocupamos la palabra reservada Implements
+public class Implementacion implements IMetodos{
+	
+	//Declarar un alista
+	//Interface que contiene metodos especificos para almacenar información
+	List<Celular> lista = new ArrayList<Celular>();
+
+	@Override
+	public void guardar(Celular celular) {
+		lista.add(celular);
+		
+	}
+
+	@Override
+	public void editar(int indice, Celular celular) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mostrar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void eliminar(int indice) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Celular buscar(int indice) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}

@@ -1,0 +1,50 @@
+package com.mx.Celular;
+
+import java.util.ArrayList;
+import java.util.List;
+
+//Esta clase es la implementación de IMetodos y ocupamos la palabra reservada Implements
+public class Implementacion implements IMetodos{
+	
+	//Declarar una lista
+	//Interface que contiene metodos especificos para almacenar información
+	List<Celular> lista = new ArrayList<Celular>();
+
+	@Override
+	public void guardar(Celular celular) {
+		lista.add(celular);
+		
+	}
+
+	@Override
+	public void editar(int indice, Celular celular) {
+		lista.set(indice, celular);
+		
+	}
+
+	@Override
+	public void mostrar() {
+		System.out.println(lista);
+		
+	}
+
+	@Override
+	public void eliminar(int indice) {
+		lista.remove(indice);
+		
+	}
+
+	@Override
+	public Celular buscar(int indice) {
+		return lista.get(indice);
+	}
+	
+	//Metodo personalizado para contar la cantidad de elementos de la lista
+	public void contar() {
+		int cont = lista.size();
+		System.out.println("La lista contiene: " + cont + "Celulares");
+	}
+	
+	
+
+}

@@ -1,0 +1,30 @@
+package com.mx.Alumno;
+
+public class Principal {
+
+	public static void main(String args[]) {
+		RegistroAlumnos registro = new RegistroAlumnos();
+
+        // Agregar alumnos
+        registro.agregarAlumno(1, "Juan Pérez");
+        registro.agregarAlumno(2, "Ana García");
+
+        // Obtener un alumno y agregar calificaciones
+        Alumno alumno1 = registro.obtenerAlumno(1);
+        if (alumno1 != null) {
+            alumno1.agregarCalificacion("Matemáticas", 8.5);
+            alumno1.agregarCalificacion("Historia", 9.0);
+            alumno1.mostrarCalificaciones();
+        }
+
+        Alumno alumno2 = registro.obtenerAlumno(2);
+        if (alumno2 != null) {
+            alumno2.agregarCalificacion("Física", 7.2);
+            alumno2.mostrarCalificaciones();
+        }
+
+        // Mostrar lista de alumnos
+        registro.mostrarAlumnos();
+		
+	}
+}

@@ -1,0 +1,16 @@
+package com.mx.Celular;
+
+public interface IMetodosMovie {
+
+	//metodo abstracto
+	//modificador de acceso, valor de retorno, firma del método y valores que puede recibir
+	public void guardar(Movie movie);
+		
+	public void editar(int indice, Movie movie);
+		
+	public void mostrar();
+		
+	public void eliminar(int indice);
+		
+	public Movie buscar(int indice);
+}

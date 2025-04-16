@@ -1,0 +1,6 @@
+package com.mx.Empleado;
+
+//Interface iMetodos
+public class Implementacion implements IMetodos{
+
+}

@@ -1,0 +1,15 @@
+package com.mx.Celular;
+
+public class Celular {
+	private String marca;
+	private String modelo;
+	private int ram;
+	private String almacenamiento;
+	private int precio;
+	private String color;
+
+	public Celular() {
+		
+	}
+
+}

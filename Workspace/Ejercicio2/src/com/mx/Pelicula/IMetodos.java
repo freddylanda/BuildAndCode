@@ -1,0 +1,16 @@
+package com.mx.Pelicula;
+
+public interface IMetodos {
+
+	//metodo abstracto
+	//modificador de acceso, valor de retorno, firma del método y valores que puede recibir
+	public void guardar(Pelicula movie);
+		
+	public void editar(int indice, Pelicula movie);
+		
+	public void mostrar();
+		
+	public void eliminar(int indice);
+		
+	public Pelicula buscar(int indice);
+}

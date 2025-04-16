@@ -1,0 +1,14 @@
+package com.mx.Celular;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		//Instanciar el objeto
+		Celular celular = new Celular("Samsung", "Galaxy", 8, "128 GB", 1098, "Blanco");
+		
+		Celular celular3 = new Celular("Nokia", "N003", 32, "512 GB", 19800, "Blanco");
+		Celular celular4 = new Celular("Sony", "SO98", 16, "512 GB", 20000, "Azul");
+
+	}
+
+}

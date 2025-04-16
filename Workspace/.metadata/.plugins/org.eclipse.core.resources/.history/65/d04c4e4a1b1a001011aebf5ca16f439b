@@ -1,0 +1,53 @@
+package com.mx.Pelicula;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		//Instanciar Objeto
+		Pelicula pelicula1 = new Pelicula("Shawshank Redemption", 1994, "Frank Darabont", 9.3);
+		Pelicula pelicula2 = new Pelicula("Dark Knight", 2008, "Christopher Nolan", 9.0);	
+		Pelicula pelicula3 = new Pelicula("Angry Men", 1957, "Sidney Lumet", 9.0);
+		Pelicula pelicula4 = new Pelicula("Return of the King", 2003, "Peter Jackson", 8.9);
+		
+		//Objeto auxiliar
+		Pelicula auxPelicula = null;
+		
+		//Mandar llamar a la clase Implementación para porder ocupar sus métodos
+		Implementacion imp = new Implementacion();
+		
+		imp.guardar(pelicula1);
+		imp.guardar(pelicula2);
+		imp.guardar(pelicula3);
+		imp.guardar(pelicula4);
+		
+		//Contar
+		imp.contar();
+		
+		//Mostrar
+		imp.mostrar();
+		
+		//Buscar
+		auxPelicula = imp.buscar(0);
+		System.out.println("Elemento encontrado: "+ movie);
+		
+		//Editar
+		auxPelicula = imp.buscar(1);
+		auxPelicula.setTitulo("Inception");
+		auxPelicula.setAnio(2010);
+		auxPelicula.setDirector("Christopher Nolan");
+		auxPelicula.setClasificacion(8.8);
+		//Mostrar después de la edición
+		imp.mostrar();
+				
+		//Eliminar
+		imp.eliminar(3);
+				
+		//Mostrar
+		imp.mostrar();
+				
+		//Contar
+		imp.contar();
+	}
+
+}

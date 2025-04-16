@@ -1,0 +1,62 @@
+package com.mx.Celular;
+
+public class Movie {
+	
+	private String titulo;
+	private int anio;
+	private String director;
+	private double clasificacion;
+
+	//constructor
+	public Movie() {
+		
+	}
+
+	public Movie(String titulo, int anio, String director, double clasificacion) {
+		super();
+		this.titulo = titulo;
+		this.anio = anio;
+		this.director = director;
+		this.clasificacion = clasificacion;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public int getAnio() {
+		return anio;
+	}
+
+	public void setAnio(int anio) {
+		this.anio = anio;
+	}
+
+	public String getDirector() {
+		return director;
+	}
+
+	public void setDirector(String director) {
+		this.director = director;
+	}
+
+	public double getClasificacion() {
+		return clasificacion;
+	}
+
+	public void setClasificacion(double clasificacion) {
+		this.clasificacion = clasificacion;
+	}
+
+	@Override
+	public String toString() {
+		return "Movie [titulo=" + titulo + ", anio=" + anio + ", director=" + director + ", clasificacion=" + clasificacion + "]\n";
+	}
+	
+	
+
+}

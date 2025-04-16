@@ -1,0 +1,6 @@
+package Implementacion;
+
+//Uso del extends: palabra reservada que hereda todos los metodos de la superclase
+public class impFruta extends ImplementacionGenerica{
+
+}

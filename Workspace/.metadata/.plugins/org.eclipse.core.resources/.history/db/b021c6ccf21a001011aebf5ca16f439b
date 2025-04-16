@@ -1,0 +1,10 @@
+package Implementacion;
+
+public interface IMetodos<T> {
+    void guardar(T objeto);
+    void mostrar();
+    void editar(T objeto);
+    void eliminar(T objeto);
+    T buscar(T clave);
+    int contar();
+}

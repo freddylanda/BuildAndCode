@@ -1,0 +1,7 @@
+package Principal;
+
+public interface IMetodos {
+	
+	void guardar(Object key, Object valor);
+
+}

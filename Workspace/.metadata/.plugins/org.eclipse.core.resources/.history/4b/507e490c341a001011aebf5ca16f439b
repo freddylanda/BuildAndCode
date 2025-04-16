@@ -1,0 +1,287 @@
+package com.mx.Pelicula;
+
+import java.util.InputMismatchException;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		//Instanciar Objeto
+		Pelicula pelicula1 = new Pelicula("Shawshank Redemption", 1994, "Frank Darabont", 9.3);
+		Pelicula pelicula2 = new Pelicula("Dark Knight", 2008, "Christopher Nolan", 9.0);	
+		Pelicula pelicula3 = new Pelicula("Angry Men", 1957, "Sidney Lumet", 9.0);
+		Pelicula pelicula4 = new Pelicula("Return of the King", 2003, "Peter Jackson", 8.9);
+		
+		//Objeto auxiliar
+		Pelicula auxPelicula = null;
+		
+		//Mandar llamar a la clase Implementación para porder ocupar sus métodos
+		Implementacion imp = new Implementacion();
+		
+		imp.guardar(pelicula1);
+		imp.guardar(pelicula2);
+		imp.guardar(pelicula3);
+		imp.guardar(pelicula4);
+		
+		/*//Contar
+		imp.contar();
+		
+		//Mostrar
+		imp.mostrar();
+		
+		//Buscar
+		auxPelicula = imp.buscar(0);
+		System.out.println("Elemento encontrado: "+ auxPelicula);
+		
+		//Editar
+		auxPelicula = imp.buscar(1);
+		auxPelicula.setTitulo("Inception");
+		auxPelicula.setAnio(2010);
+		auxPelicula.setDirector("Christopher Nolan");
+		auxPelicula.setClasificacion(8.8);
+		//Mostrar después de la edición
+		imp.mostrar();
+				
+		//Eliminar
+		imp.eliminar(3);
+				
+		//Mostrar
+		imp.mostrar();
+				
+		//Contar
+		imp.contar();*/
+		
+		Scanner datos = new Scanner(System.in);
+		int menuP = 0, menuS = 0, menuD = 0, indice = 0;
+		
+		//Variables locales
+		String titulo, director;
+		int anio;
+		double clasificacion;
+		
+		do {
+			System.out.println("======MENU======");
+			System.out.println("1 => ALTA");
+			System.out.println("2 => BUSCAR");
+			System.out.println("3 => EDITAR");
+			System.out.println("4 => ELIMINAR");
+			System.out.println("5 => MOSTRAR");
+			System.out.println("6 => CONTAR");
+			System.out.println("7 => SALIR");
+			System.out.println("ELIGE UNA OPCIÓN VALIDA DEL MENÚ");
+			
+			//Declaración del bloque TryCatch para evitar que el programa se rompa cuando el usuario
+			//introduzca valores no numericos
+			try {
+				menuP = datos.nextInt();
+				datos.nextLine();
+				
+				//inicia bloque case
+				switch(menuP) {
+				case 1:
+					System.out.println("------ALTA------");
+					System.out.println("Llena los siguientes datos sobre la película");
+					System.out.println("Titulo: ");
+					titulo = datos.nextLine();
+
+					System.out.println("Año: ");
+					anio = datos.nextInt();
+					datos.nextLine();
+					
+					System.out.println("Director: ");
+					director = datos.nextLine();
+					
+					System.out.println("Clasificación: ");
+					clasificacion = datos.nextDouble();
+					datos.nextLine();					
+					
+					//Instanciar
+					
+					auxPelicula = new Pelicula(titulo, anio, director, clasificacion);
+					
+					imp.guardar(auxPelicula);
+					System.out.println("Se guardó con exito la película: "+auxPelicula.getTitulo()+" en la lista.");
+					
+					break;
+				case 2: 
+					System.out.println("------BUSCAR------");
+					imprimirDatos(imp);
+					if(imp.lista.size() > 0) {
+						System.out.println("Indica el indice para mostrar la información");
+						indice = datos.nextInt();
+						datos.nextLine();
+						
+						if(indice >=0 && indice < imp.lista.size()) {
+							auxPelicula = imp.buscar(indice);
+							System.out.println("Esta es la información completa de la película: "+ auxPelicula);
+						}else {
+							System.out.println("Indice fuera de rango, intenta con uno dentro del menú");
+						}						
+					}					
+					break;
+				case 3:
+					System.out.println("------EDITAR------");
+					imprimirDatos(imp);
+					
+					if(imp.lista.size() > 0) {
+						System.out.println("Indique el indice que desea editar");
+						indice = datos.nextInt();
+						datos.nextLine();
+						
+						if(indice >= 0 && indice < imp.lista.size()) {
+							do {
+								System.out.println("----MENU EDITAR----");
+								System.out.println("1. EDITAR TITULO");
+								System.out.println("2. EDITAR AÑO");
+								System.out.println("3. EDITAR DIRECTOR");
+								System.out.println("4. EDITAR CLASIFICACIÓN");
+								System.out.println("5. REGRESAR AL MENÚ PRINCIPAL");								
+								System.out.println("ELIGE UNA OPCIÓN VALIDA");
+								
+								menuS = datos.nextInt();
+								datos.nextLine();
+								
+								auxPelicula = imp.buscar(indice);
+								switch(menuS) {
+								case 1:
+									System.out.println("Ingrese el nuevo Título: ");
+									titulo = datos.nextLine();
+									auxPelicula.setTitulo(titulo);
+									break;
+								case 2:
+									System.out.println("Ingresa el año: ");
+									anio = datos.nextInt();
+									auxPelicula.setAnio(anio);
+									break;
+								case 3:
+									System.out.println("Ingresa director: ");
+									director = datos.nextLine();
+									auxPelicula.setDirector(director);
+									break;
+								case 4:
+									System.out.println("Ingresa la clasificacion: ");
+									clasificacion = datos.nextDouble();
+									auxPelicula.setClasificacion(clasificacion);
+									break;					
+								case 5:
+									System.out.println("Regresando al Menú Principal");
+									break;
+								default:
+									System.out.println("Indice no valido");
+									break;
+								}
+								//System.out.println("EDICIÓN EXITOSA");
+								
+							}while(menuS!=5);
+						}else {
+							System.out.println("Indice fuera de rango, intente con uno valido dentro"
+									+ " del menú");
+						}
+					}
+					
+					break;
+				case 4:
+					System.out.println("------ELIMINAR------");
+					imprimirDatos(imp);
+					
+					if(imp.lista.size() > 0) {											
+						/*if(indice >= 0 && indice < imp.lista.size()) {
+							imp.eliminar(indice);
+							System.out.println("Eliminación Exitosa");
+						}else {
+							System.out.println("Indice fuera de rango");
+						}*/						
+						do {
+							System.out.println("Indique el atributo a eliminar");
+							System.out.println("1. TITULO");
+							System.out.println("2. AÑO");
+							System.out.println("3. DIRECTOR");
+							System.out.println("4. CLASIFICACIÓN");
+							System.out.println("5. REGRESAR AL MENÚ PRINCIPAL");
+							
+							menuD = datos.nextInt();
+							datos.nextLine();
+																					
+							try {
+								System.out.println("Ingrese el nuevo Título: ");
+								titulo = datos.nextLine();
+								switch(menuD) {
+								case 1:
+									Iterator<Pelicula> i = 
+									break;
+								case 2:
+									break;
+								case 3:
+									break;
+								case 4:
+									break;
+								case 5:
+									System.out.println("Regresando al Menú Principal");
+									break;
+								default:
+									System.out.println("Indice no valido");
+									break;
+								}
+								
+							}catch(Exception e) {
+								System.out.println("Ocurrió un error inesperado "+e.getMessage());
+							}
+						
+							
+						}while(menuD!=5);
+					}else {
+						System.out.println("Lista vaciá, no es posible eliminar registros.");
+					}
+					break;
+				case 5:
+					System.out.println("------MOSTRAR------");
+					if(imp.lista.size() > 0) {
+						imp.mostrar();
+					}else {
+						System.out.println("No hay registros en esta lista");
+					}
+					break;
+				case 6:
+					System.out.println("------CONTAR------");
+					imp.contar();
+					break;
+				case 7:
+					System.out.println("Saliendo del menú... Vuelva Pronto!!!");
+					break;
+				default:
+					System.out.println("Indice fuera de rango, intenta con uno valido");
+					break;
+					
+				}//Termina mi bloque Case del menuP				
+			}catch(NumberFormatException e) {
+				System.out.println("Valor no permitido, por favor ingresa un número");
+				datos.nextLine();
+			}catch(InputMismatchException e) {
+				System.out.println("Entrada invalida, por favor ingresa un número");
+				datos.nextLine();				
+			}catch(Exception e) {
+				System.out.println("Ocurrió un error inesperado "+e.getMessage());
+			}
+			
+		}while(menuP != 7);
+	
+	}//Termina el método main
+	
+	//Métodos static
+	//Crear metodo imprimirDatos
+	public static void imprimirDatos(Implementacion imp) {
+		System.out.println("Paliculas Registradas");
+		
+		if(imp.lista.size()>0) {
+			for(int i = 0; i < imp.lista.size(); i++) {
+				System.out.println("La Película ["+i+"] con Titulo: "+ imp.lista.get(i).getTitulo());
+			}
+		}else {
+			System.out.println("No hay Películas registradas");
+		}
+		
+	}
+
+}

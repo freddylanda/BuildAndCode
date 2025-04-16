@@ -1,0 +1,43 @@
+package com.mx.Celular;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ImplementacionMovie implements IMetodosMovie{
+
+	
+	//Declarar una lista para peliculas
+	//Interface que contiene metodos especificos para almacenar información
+	List<Movie> lista = new ArrayList<Movie>();
+		
+	@Override
+	public void guardar(Movie movie) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void editar(int indice, Movie movie) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mostrar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void eliminar(int indice) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Movie buscar(int indice) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

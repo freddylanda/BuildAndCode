@@ -1,0 +1,7 @@
+package com.mx.Entidades;
+
+public class Fruta {
+	
+	private String nombre; //Clave
+
+}

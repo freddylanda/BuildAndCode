@@ -1,0 +1,31 @@
+package com.mx.Alumno;
+
+import java.util.HashMap;
+
+public class RegistroAlumnos {
+	private HashMap<Integer, Alumno> alumnos;
+
+    public RegistroAlumnos() {
+        this.alumnos = new HashMap<>();
+    }
+
+    public void agregarAlumno(int id, String nombre) {
+        if (!alumnos.containsKey(id)) {
+            alumnos.put(id, new Alumno(nombre));
+            System.out.println("Alumno agregado: " + nombre + " con ID " + id);
+        } else {
+            System.out.println("Error: El ID ya está registrado.");
+        }
+    }
+
+    public void mostrarAlumnos() {
+        System.out.println("Lista de alumnos:");
+        for (HashMap.Entry<Integer, Alumno> entry : alumnos.entrySet()) {
+            System.out.println("ID: " + entry.getKey() + ", Nombre: " + entry.getValue().getNombre());
+        }
+    }
+
+    public Alumno obtenerAlumno(int id) {
+        return alumnos.get(id);
+    }
+}

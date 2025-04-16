@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.mx.Celular.IMetodos"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.mx.Celular.Celular"/>
+    <fullyQualifiedTypeName name="com.mx.Celular.Implementacion"/>
+    <fullyQualifiedTypeName name="com.mx.Celular.Movie"/>
+    <fullyQualifiedTypeName name="com.mx.Celular.IMetodosMovie"/>
+    <fullyQualifiedTypeName name="com.mx.Celular.ImplementacionMovie"/>
+</qualifiedTypeNameHistroy>

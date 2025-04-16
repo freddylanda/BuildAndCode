@@ -1,0 +1,65 @@
+package Principal;
+
+import com.mx.Entidades.Automovil;
+import com.mx.Entidades.Empleado;
+import com.mx.Entidades.Libro;
+
+import Implementacion.ImpAutomovil;
+import Implementacion.ImpEmpleado;
+import Implementacion.ImpLibro;
+
+public class Principal {
+	public static void main(String[] args) {
+		
+		//Libros
+        System.out.println("\n Gestión de Libros:");
+        ImpLibro libros = new ImpLibro();
+        Libro libro1 = new Libro("1984", "George Orwell", 1949, "Distopía");
+        Libro libro2 = new Libro("Cien años de soledad", "Gabriel García Márquez", 1967, "Realismo mágico");
+        libros.guardar(libro1.getTitulo(), libro1);
+        libros.guardar(libro2.getTitulo(), libro2);
+        libros.mostrar();
+        System.out.println("Total libros: " + libros.contar());
+        
+        libros.editar(libro1.getTitulo(), new Libro("1984", "George Orwell", 1950, "Distopía Revisada"));
+        libros.mostrar();
+        libros.eliminar(libro2.getTitulo());
+        libros.mostrar();
+        System.out.println("Buscar libro 1984: " + libros.buscar(libro1.getTitulo()));
+
+        //Empleados
+        System.out.println("\n‍ Gestión de Empleados:");
+        ImpEmpleado empleados = new ImpEmpleado();
+        Empleado emp1 = new Empleado(1, "Carlos", "Gerente", 50000);
+        Empleado emp2 = new Empleado(2, "Ana", "Desarrollador", 40000);
+        empleados.guardar(emp1.getId(), emp1);
+        empleados.guardar(emp2.getId(), emp2);
+        empleados.mostrar();
+        System.out.println("Total empleados: " + empleados.contar());
+        
+        empleados.editar(emp1.getId(), new Empleado(1, "Carlos", "Director General", 60000));
+        empleados.mostrar();
+        empleados.eliminar(5);
+        empleados.mostrar();
+        System.out.println("Buscar empleado Ana: " + empleados.buscar(emp2.getId()));
+
+        //Autos
+        System.out.println("\n Gestión de Automóviles:");
+        ImpAutomovil autos = new ImpAutomovil();
+        Automovil auto1 = new Automovil("Toyota", "Corolla", 2022, 20000);
+        Automovil auto2 = new Automovil("Ford", "Mustang", 2021, 40000);
+        autos.guardar(auto1.getMarca(), auto1);
+        autos.guardar(auto2.getMarca(), auto2);
+        autos.mostrar();
+        System.out.println("Total autos: " + autos.contar());
+        autos.editar(auto1.getMarca(), new Automovil("Toyota", "Camry", 2023, 25000));
+        autos.mostrar();
+        autos.eliminar(auto2.getMarca());
+        autos.mostrar();
+        System.out.println("Buscar auto Toyota: " + autos.buscar(auto1.getMarca()));
+        
+        libros.mostrar();
+        empleados.mostrar();
+        autos.mostrar();
+    }
+}

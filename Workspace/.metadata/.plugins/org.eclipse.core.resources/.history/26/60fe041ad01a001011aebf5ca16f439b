@@ -1,0 +1,50 @@
+package com.mx.Empleado;
+
+import java.util.HashMap;
+
+//Interface iMetodos
+public class Implementacion implements IMetodos{
+	
+	/*
+	 * HasMap<Clave , Valor> hash = new HashMap<>();
+	 * 
+	 * HashMap -> es una libreria de Java.util
+	 * KeyDateType -> clase contenedora del dato primitivo de la clave
+	 * ValueDataType -> El nombre de la clase
+	 * Nombre -> asignado por el programador
+	 * new -> palabra reservada para invocar al contenedor y lo llama por defecto
+ 	 * */
+	
+	//Declaración de HashMap - HashMap es una interface
+	HashMap<Integer, Empleado> hash = new HashMap<Integer, Empleado>();
+
+	@Override
+	public void guardar(Empleado empleado) {
+		hash.put(empleado.getClave(), empleado);
+		
+	}
+
+	@Override
+	public Empleado buscar(Empleado empleado) {
+		return hash.get(empleado.getClave());
+	}
+
+	@Override
+	public void editar(Empleado empleado) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void eliminar(Empleado empleado) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mostrar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

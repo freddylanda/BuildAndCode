@@ -1,0 +1,27 @@
+package com.mx.Celular;
+
+public class Celular {
+	private String marca;
+	private String modelo;
+	private int ram;
+	private String almacenamiento;
+	private int precio;
+	private String color;
+
+	public Celular() {
+		
+	}
+
+	public Celular(String marca, String modelo, int ram, String almacenamiento, int precio, String color) {
+		super();
+		this.marca = marca;
+		this.modelo = modelo;
+		this.ram = ram;
+		this.almacenamiento = almacenamiento;
+		this.precio = precio;
+		this.color = color;
+	}
+	
+	
+
+}

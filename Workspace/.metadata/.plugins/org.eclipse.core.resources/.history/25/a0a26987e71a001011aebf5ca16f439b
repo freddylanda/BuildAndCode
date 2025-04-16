@@ -1,0 +1,17 @@
+package com.mx.Entidades;
+
+public class Juguete {
+	
+	private int sku; //clave
+	private String nombre;
+	private String edades;
+	private double precio;
+	private String fabricante;
+	private String tipo;
+	private String color;
+	
+	public Juguete() {
+		
+	}
+
+}

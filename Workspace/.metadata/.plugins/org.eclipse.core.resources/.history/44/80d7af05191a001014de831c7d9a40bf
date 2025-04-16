@@ -1,0 +1,48 @@
+package com.mx.Pelicula;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ImplementacionMovie implements IMetodosMovie{
+
+	
+	//Declarar una lista para peliculas
+	//Interface que contiene metodos especificos para almacenar información
+	List<Movie> lista = new ArrayList<Movie>();
+		
+	@Override
+	public void guardar(Movie movie) {
+		lista.add(movie);
+		
+	}
+
+	@Override
+	public void editar(int indice, Movie movie) {
+		lista.set(indice, movie);
+		
+	}
+
+	@Override
+	public void mostrar() {
+		System.out.println(lista);
+		
+	}
+
+	@Override
+	public void eliminar(int indice) {
+		lista.remove(indice);
+		
+	}
+
+	@Override
+	public Movie buscar(int indice) {
+		return lista.get(indice);
+	}
+	
+	//Metodo personalizado para contar la cantidad de elementos de la lista
+	public void contar() {
+		int cont = lista.size();
+		System.out.println("La lista contiene: " + cont + " Peliculas");
+	}
+
+}
