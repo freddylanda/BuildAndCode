@@ -1,0 +1,14 @@
+
+
+# Archivos y carpetas generados por el IDE
+.idea/
+*.iml
+
+# Archivos de compilación
+/bin/
+/target/
+
+# Archivos de sistema
+*.class
+*.log
+
