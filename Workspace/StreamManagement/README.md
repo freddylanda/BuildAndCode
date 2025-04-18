@@ -7,7 +7,7 @@ Este proyecto en Java implementa un sistema para gestionar series y videojuegos.
 
 - **Paquete `models`**: Contiene las clases `Serie` y `Videojuego` que representan los modelos de datos.
 - **Paquete `interfaces`**: Contiene la interfaz `Entregable`, que define los métodos comunes.
-- **Paquete `main`**: Contiene la clase `Aplicacion`, punto de entrada del programa.
+- **Paquete `main`**: Contiene la clase `Main`, punto de entrada del programa.
 
 ## Funcionalidades
 
